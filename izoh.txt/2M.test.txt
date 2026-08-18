@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Murakkabroq Test</title>
+
+<style>
+body{
+    font-family:Arial, sans-serif;
+    margin:30px;
+    background:#f0f8ff;
+}
+
+h2{
+    color:darkblue;
+    text-align:center;
+}
+
+.question{
+    background:white;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 0 5px gray;
+}
+
+button{
+    padding:10px 20px;
+    font-size:18px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkgreen;
+}
+
+#natija{
+    margin-top:20px;
+    padding:15px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 5px gray;
+    font-size:20px;
+}
+
+.student-info{
+    background:#e8f5e9;
+    padding:18px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 0 5px gray;
+}
+
+.student-info input,
+.student-info select{
+    padding:9px;
+    font-size:16px;
+    border:1px solid #aaa;
+    border-radius:6px;
+    margin-left:8px;
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+<h2>"INFORMATIKA VA AXBOROT TEXNOLOGIYALARI" 5-SINF I-CHORAK 1-MAVZU TEST-1</h2>
+
+<form id="test">
+
+<div class="student-info">
+<h3>O‘QUVCHI MA’LUMOTLARI</h3>
+
+<label>
+<b>O‘quvchining familiyasi va ismi:</b>
+<input type="text" id="fio" placeholder="Masalan: Aliyev Ali" required>
+</label>
+
+<br><br>
+
+<label>
+<b>Sinf:</b>
+<select id="sinf" required>
+<option value="">Sinfni tanlang</option>
+<option>5-A</option>
+<option>5-B</option>
+</select>
+</label>
+</div>
+
+
+<div class="question">
+<p><b>1. Bilasizmi...? Kompyuterlar ixtiro qilinishidan oldin odamlar matn yozish uchun qanday mashinadan foydalanishgan?</b></p>
+
+<label>
+<input type="radio" name="q1" value="1">
+Yozuv mashinalaridan foydalanishgan
+</label><br>
+
+<label>
+<input type="radio" name="q1" value="0">
+Chizuv mashinalaridan foydalanishgan
+</label><br>
+
+<label>
+<input type="radio" name="q1" value="0">
+Tikuv mashinalaridan foydalanishgan
+</label>
+
+</div>
+
+<div class="question">
+<p><b>2. Kompyuterlar ixtiro qilinishidan oldin odamlar matn yozish uchun foydalangan yozuv mashinasi oq qog`oz sahifasiga  harflarni qanday tergan?</b></p>
+
+<label>
+<input type="radio" name="q2" value="1">
+Yozuv mashinasining tugmalari zamonaviy klaviatura kabi bosilgach,siyoh tasmaga urilgan va sahifada harflar terilgan
+</label><br>
+
+<label>
+<input type="radio" name="q2" value="0">
+Yozuv mashinasining tugmalari zamonaviy klaviatura kabi bosilgach,siyoh qog`ozga urilgan va sahifada harflar terilgan
+</label><br>
+
+<label>
+<input type="radio" name="q2" value="0">
+Yozuv mashinasining tugmalari zamonaviy klaviatura kabi bosilgach,siyohga urilgan va sahifada harflar terilgan
+</label>
+
+</div>
+
+<div class="question">
+<p><b>3. Matn bilan ishlash deganda nimani tushunasiz?</b></p>
+
+<label>
+<input type="radio" name="q3" value="0">
+Elektron pochtadan foydalanish tushuniladi
+</label><br>
+
+<label>
+<input type="radio" name="q3" value="0">
+Elektron aloqa vositalaridan foydalanish tushuniladi
+</label><br>
+
+<label>
+<input type="radio" name="q3" value="1">
+Matn yozish yoki hujjatdagi matnni o`zgartirish orqali elektron hujjatlar yaratish jarayoni tushuniladi
+</label>
+
+</div>
+<div class="question">
+<p><b>4. Elektron hujjatlar yaratish jarayonida matn bilan ishlash ko`nikmasini puxta egallashingiz nima uchun zarur?</b></p>
+
+
+<label>
+<input type="radio" name="q4" value="0">
+Elektron pochta yordamida  boshqalarga elektron hujjatlarni yuborish bilan shug`ullashingiz uchun zarur
+</label><br>
+
+<label>
+<input type="radio" name="q4" value="1">
+Maktab vazifalarini bajarishdan tortib,orzungizdagi kasb bilan shug`ullashingiz uchun zarur
+</label></br>
+<label>
+<input type="radio" name="q4" value="0">
+Elektron aloqa vositalari yordamida  boshqalarga elektron hujjatlarni yuborish bilan shug`ullashingiz uchun zarur
+</label><br>
+
+</div>
+</div>
+<div class="question">
+<p><b>5. Xotirangizni sinab ko`ringchi...Matn bilan ishlash jarayonida Siz qanday nomlangan dasturdan foydalanasiz?</b></p>
+
+
+<label>
+<input type="radio" name="q5" value="1">
+Microsoft WORD matn muharriri dasturi
+</label><br>
+
+<label>
+<input type="radio" name="q5" value="0">
+Microsoft Excel  hisoblash dasturi</br>
+</label>
+<label>
+<input type="radio" name="q5" value="0">
+Microsoft POWER POINT taqdimot yartish dasturi
+</label><br>
+</div>
+<div class="question">
+<p><b>6. Matn bilan ishlash ta`rifini qanday tushunasiz?</b></p>
+
+
+<label>
+<input type="radio" name="q6" value="0">
+Taqdimot yaratish-bu matn bilan ishlash ta`rifidir
+</label><br>
+
+<label>
+<input type="radio" name="q6" value="0">
+Hisoblash ishlarini bajarish-bu matn bilan ishlash ta`rifidir
+</label><br>
+<label>
+<input type="radio" name="q6" value="1">
+Matn yozish va tahrirlash ko`nikmasi-bu matn bilan ishlash ta`rifidir.
+</label>
+</div>
+<div class="question">
+<p><b>7. Matn deganda nimani tushunasiz?</b></p>
+
+<label>
+<input type="radio" name="q7" value="0">
+Matn yozish va tahrirlash,matnni o`zgartirish jaryonlaridagi bajariladigan mashqlar jamlamasi
+</label><br>
+
+<label>
+<input type="radio" name="q7" value="1">
+Klaviaturadagi tugmalarni bosganingizda ekranda paydo bo`luvchi harf va so`zlar jamlamasi
+</label><br>
+<label>
+<input type="radio" name="q7" value="0">
+Kompyuterda turli vazifalarni bajaruvchi dasturlar jamlamasi
+</label>
+</div>
+<div class="question">
+<p><b>8. Dasturiy ta`minot nima?</b></p>
+
+<label>
+<input type="radio" name="q8" value="0">
+Matn yozish va tahrirlash ko`nikmasi
+</label><br>
+
+<label>
+<input type="radio" name="q8" value="0">
+Klaviaturadagi tugmalarni bosganingizda ekranda paydo bo`luvchi harf va so`zlar jamlamasi
+</label></br>
+<label>
+<input type="radio" name="q8" value="1">
+Kompyuterda turli vazifalarni bajaruvchi dastur,masalan matn bilan ishlash dasturi-MS WORD
+</label><br>
+
+</div>
+<div class="question">
+<p><b>9. Ikonka nima?</b></p>
+
+<label>
+<input type="radio" name="q9" value="1">
+Tasvir so`z yoki tasvir va so`zdan iborat belgi
+</label><br>
+
+<label>
+<input type="radio" name="q9" value="0">
+Klaviaturada joylashgan barcha tugmalar
+</label></br>
+<label>
+<input type="radio" name="q9" value="0">
+Kompyuterning ekrandagi kursorini harakatlantiruvchi qurilma
+</label><br>
+</div>
+<div class="question">
+<p><b>10. Tugmalar deganda nimani tushunasiz?</b></p>
+
+<label>
+<input type="radio" name="q10" value="0">
+Kompyuterning ekrandagi kursorini harakatlantiruvchi qurilma
+</label><br>
+
+<label>
+<input type="radio" name="q10" value="0">
+Tasvir so`z yoki tasvir va so`zdan iborat belgi
+</label></br>
+<label>
+<input type="radio" name="q10" value="1">
+Klaviaturada joylashgan barcha tugmalar
+</label></br>
+</div>
+<div class="question">
+<p><b>11. Bilasizmi...Kompyuterning sichqonchasi vazifasi nimadan iborat?</b></p>
+<label>
+<input type="radio" name="q11" value="1">
+Kompyuterning ekrandagi kursorini harakatlantirishdan iborat
+</label><br>
+<label>
+<input type="radio" name="q11" value="0">
+Klaviaturada joylashgan barcha tugmalarni islatishdan iborat
+</label></br>
+<label>
+<input type="radio" name="q11" value="0">
+Tasvir so`z yoki tasvir va so`zdan iborat belgilarni ko`rsatishdan iborat
+</label><br>
+</div>
+<div class="question">
+<p><b>12.  Bilasizmi...Sichqonchani harakatlantirganda kompyuter ekranida harakatlanadigan gorizontal chiziqchani nomi nima?</b></p>
+
+<label>
+<input type="radio" name="q12" value="0">
+Tugma
+</label><br>
+
+<label>
+<input type="radio" name="q12" value="0">
+Ikonka
+</label></br>
+<label>
+<input type="radio" name="q12" value="1">
+Kursor
+</label><br>
+</div>
+<div class="question">
+<p><b>13. Sichqonchadan foydalanish nima uchun zarur?</b></p>
+
+<label>
+<input type="radio" name="q13" value="0">
+Hujjat tarkibidagi o`zgartirishlarni kuzatish uchun zarur 
+</label><br>
+
+<label>
+<input type="radio" name="q13" value="1">
+Matn kiritish joyini bildirish uchun zarur
+</label></br>
+<label>
+<input type="radio" name="q13" value="0">
+Hujjat tarkibidagi so`zlarni tarjima va taqqoslash uchun zarur
+</label><br>
+</div>
+<div class="question">
+<p><b>14. Belgilash nima?</b></p>
+
+<label>
+<input type="radio" name="q14" value="1">
+Tahrirlanayotgan matnni rang bilan ajratish
+</label><br>
+
+<label>
+<input type="radio" name="q14" value="0">
+Kiritilgan matnni ko`rish imkonini beruvchi kompyuter qismi
+</label></br>
+<label>
+<input type="radio" name="q14" value="0">
+Matn oynasida o`chib-yonuvchi belgi.U matn qayerga kiritilishini ko`rsatadi
+</label><br>
+</div>
+<div class="question">
+<p><b>15.Kursor nima?</b></p>
+
+<label>
+<input type="radio" name="q15" value="0">
+Tahrirlanayotgan matnni rang bilan ajratish
+</label><br>
+
+<label>
+<input type="radio" name="q15" value="0">
+Kiritilgan matnni ko`rish imkonini beruvchi kompyuter qismi
+</label></br>
+<label>
+<input type="radio" name="q15" value="1">
+Matn oynasida o`chib-yonuvchi belgi.U matn qayerga kiritilishini ko`rsatadi
+</label><br>
+<div class="question">
+<p><b>16.Kompyuter ekrani nima?</b></p>
+
+<label>
+<input type="radio" name="q16" value="0">
+Tahrirlanayotgan matnni rang bilan ajratish
+</label><br>
+
+<label>
+<input type="radio" name="q16" value="1">
+Kiritilgan matnni ko`rish imkonini beruvchi kompyuter qismi
+</label></br>
+<label>
+<input type="radio" name="q16" value="0">
+Matn oynasida o`chib-yonuvchi belgi.U matn qayerga kiritilishini ko`rsatadi
+</label><br>
+
+</div>
+<button type="button" onclick="tekshir()">
+Natijani ko'rish
+</button>
+
+<button type="button" onclick="excelgaSaqlash()" style="background:#1565c0; margin-left:10px;">
+Excelga saqlash
+</button>
+<br><br>
+<button type="button" onclick="barchaNatijalarniExcelga()" style="background:#7b1fa2;">
+Barcha natijalarni Excelga chiqarish
+</button>
+
+<button type="button" onclick="natijalarniTozalash()" style="background:#c62828; margin-left:10px;">
+Natijalarni tozalash
+</button>
+
+</form>
+
+<div id="natija"></div>
+
+<script>
+
+function tekshir(){
+
+let jamiSavol = 15;
+
+let fio = document.getElementById("fio").value.trim();
+let sinf = document.getElementById("sinf").value;
+
+if(fio === "" || sinf === ""){
+    alert("Iltimos, o‘quvchining familiyasi va ismini hamda sinfini kiriting!");
+    return;
+}
+
+let ball = 0;
+
+let hisobot = "";
+
+for(let i=1; i<=jamiSavol; i++){
+
+let javob =
+document.querySelector('input[name="q'+i+'"]:checked');
+
+if(javob){
+
+if(javob.value=="1"){
+
+ball++;
+
+hisobot += "✅ " + i +
+"-savol : To'g'ri<br>";
+
+}else{
+
+hisobot += "❌ " + i +
+"-savol : Noto'g'ri<br>";
+
+}
+
+}else{
+
+hisobot += "⚠ " + i +
+"-savol javob belgilanmagan.<br>";
+
+}
+
+}
+
+let foiz = (ball/jamiSavol)*100;
+
+let baho="";
+
+if(foiz>=90){
+
+baho="5";
+
+}else if(foiz>=70){
+
+baho="4";
+
+}else if(foiz>=50){
+
+baho="3";
+
+}else{
+
+baho="2";
+
+}
+
+document.getElementById("natija").innerHTML=
+
+"<h2>TEST NATIJASI</h2>" +
+"<b>O‘quvchi:</b> " + fio +
+"<br><b>Sinf:</b> " + sinf +
+"<br><br>" +
+hisobot +
+
+"<hr>" +
+
+"<b>To'g'ri javoblar:</b> " + ball +
+
+"<br><b>Jami savollar:</b> " + jamiSavol +
+
+"<br><b>Foiz:</b> " + foiz.toFixed(1) + "%" +
+
+"<br><br><b>Baho:</b> " + baho;
+
+
+    window.testNatija = {
+        fio: fio,
+        sinf: sinf,
+        ball: ball,
+        jamiSavol: jamiSavol,
+        foiz: foiz,
+        baho: baho,
+        sana: new Date().toLocaleString("uz-UZ")
+    };
+}
+
+
+function excelgaSaqlash(){
+
+    if(!window.testNatija){
+        alert("Avval testni bajaring va «Natijani ko‘rish» tugmasini bosing!");
+        return;
+    }
+
+    let n = window.testNatija;
+
+    // Oldingi o'quvchilar natijalarini brauzer xotirasidan olamiz
+    let natijalar = JSON.parse(localStorage.getItem("testNatijalari") || "[]");
+
+    // Yangi natijani qo'shamiz
+    natijalar.push({
+        sana: n.sana,
+        fio: n.fio,
+        sinf: n.sinf,
+        ball: n.ball,
+        jamiSavol: n.jamiSavol,
+        foiz: n.foiz.toFixed(1) + "%",
+        baho: n.baho
+    });
+
+    // Brauzerda saqlab qo'yamiz
+    localStorage.setItem("testNatijalari", JSON.stringify(natijalar));
+
+    // Barcha o'quvchilar natijasini Excel jadvaliga tayyorlaymiz
+    let jadval = [
+        ["№", "Sana", "O‘quvchi F.I.O.", "Sinf",
+         "To‘g‘ri javoblar", "Jami savollar", "Foiz", "Baho"]
+    ];
+
+    natijalar.forEach(function(r, index){
+        jadval.push([
+            index + 1,
+            r.sana,
+            r.fio,
+            r.sinf,
+            r.ball,
+            r.jamiSavol,
+            r.foiz,
+            r.baho
+        ]);
+    });
+
+    let worksheet = XLSX.utils.aoa_to_sheet(jadval);
+
+    // Ustun kengliklari
+    worksheet["!cols"] = [
+        {wch:5},
+        {wch:20},
+        {wch:28},
+        {wch:10},
+        {wch:18},
+        {wch:16},
+        {wch:12},
+        {wch:8}
+    ];
+
+    let workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Natijalar");
+
+    XLSX.writeFile(workbook, "Barcha_oquvchilar_natijalari.xlsx");
+
+    alert("Natija saqlandi!\nJami o‘quvchilar: " + natijalar.length);
+}
+
+// Barcha yig'ilgan natijalarni Excelga qayta chiqarish
+function barchaNatijalarniExcelga(){
+
+    let natijalar = JSON.parse(localStorage.getItem("testNatijalari") || "[]");
+
+    if(natijalar.length === 0){
+        alert("Hozircha saqlangan o‘quvchi natijalari yo‘q.");
+        return;
+    }
+
+    let jadval = [
+        ["№", "Sana", "O‘quvchi F.I.O.", "Sinf",
+         "To‘g‘ri javoblar", "Jami savollar", "Foiz", "Baho"]
+    ];
+
+    natijalar.forEach(function(r, index){
+        jadval.push([
+            index + 1,
+            r.sana,
+            r.fio,
+            r.sinf,
+            r.ball,
+            r.jamiSavol,
+            r.foiz,
+            r.baho
+        ]);
+    });
+
+    let worksheet = XLSX.utils.aoa_to_sheet(jadval);
+
+    worksheet["!cols"] = [
+        {wch:5},
+        {wch:20},
+        {wch:28},
+        {wch:10},
+        {wch:18},
+        {wch:16},
+        {wch:12},
+        {wch:8}
+    ];
+
+    let workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Natijalar");
+
+    XLSX.writeFile(workbook, "Barcha_oquvchilar_natijalari.xlsx");
+}
+
+// O'qituvchi xohlasa barcha saqlangan natijalarni tozalashi mumkin
+function natijalarniTozalash(){
+
+    if(confirm("Barcha saqlangan o‘quvchi natijalarini o‘chirishni xohlaysizmi?")){
+        localStorage.removeItem("testNatijalari");
+        alert("Barcha natijalar o‘chirildi.");
+    }
+}
+
+</script>
+
+</body>
+</html>
